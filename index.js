@@ -1,11 +1,18 @@
-for(let i=0; i< 50; i++){
-  if(i %3 === 0 && i%5 === 0){ // is divisible by 3 and 5?
-    console.log('fizzbuzz');
-  }else if(i%3 === 0){ // ok it's not divisible by both how about just 3?
-    console.log('fizz');
-  }else if(i%5 === 0){ //no? what about just 5 then?
-    console.log('buzz');
-  }else{              //so its not divisible by 3 or 5 then
-    console.log(i);
-  }
+function happyPrint(string){
+ console.log("😀: "+string);
 }
+
+function sadPrint(string){
+ console.log("😢: "+string);
+}
+
+//This high-order function adds 2 parameters and passes the answer to the callback
+function add(a, b, callback){
+   let ans = a + b;
+   callback(ans);// call the callback and pass the answer to it
+}
+
+//call add passing the callbacks to it
+
+add(5, 10, happyPrint);
+add(11, 12, sadPrint);
